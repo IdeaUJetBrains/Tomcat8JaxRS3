@@ -9,7 +9,7 @@ import static javax.ws.rs.core.Response.status;
 @Path("/hello/{t}")
 public class StaticFinalFieldsExample {
 
-    //-----For these fields Warnings should be displayed-------//
+    //TODO-----For these fields Warnings should be displayed-------//
     @QueryParam("staticfinal")
     public static final String finalStaticField = "staticfinalValue";
 
@@ -25,11 +25,15 @@ public class StaticFinalFieldsExample {
     @HeaderParam("final2")
     public final String finalField2 = "finalValue2";
 
+
     @Context
     public final String finalField3 = "finalValue3";
 
-    @FormParam("final4")
+    @FormParam("final4") // bug IDEA-149371
     public final String finalField4 = "finalValue4";
+
+    @BeanParam  // annotation appears from jax-rs 2.0
+    public final String finalField5 = "finalValue5";
 
 
     /*

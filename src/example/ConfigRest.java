@@ -34,6 +34,8 @@ public class ConfigRest extends Application {
 
         h.add(SingletonEager.class);
         h.add(StaticFinalFieldsExample.class);
+        h.add(DefaultValueAnnotation.class);
+
 
         return h;
     }
