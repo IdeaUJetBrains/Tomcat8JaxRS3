@@ -3,6 +3,7 @@ package example;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
 
 // The Java class will be hosted at the URI path "/helloworld"
 
