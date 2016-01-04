@@ -1,9 +1,7 @@
 package example;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 import static javax.ws.rs.core.Response.status;
@@ -11,16 +9,31 @@ import static javax.ws.rs.core.Response.status;
 @Path("/hello/{t}")
 public class StaticFinalFieldsExample {
 
+    //-----For these fields Warnings should be displayed-------//
     @QueryParam("staticfinal")
     public static final String finalStaticField = "staticfinalValue";
 
-    @QueryParam("static")
+    @PathParam("t")
     public static String staticField = "staticValue";
 
-    @QueryParam("final")
+    @MatrixParam("final")
     public final String finalField = "finalValue";
 
+    @CookieParam("final1")
+    public final String finalField1 = "finalValue1";
+
+    @HeaderParam("final2")
+    public final String finalField2 = "finalValue2";
+
+    @Context
+    public final String finalField3 = "finalValue3";
+
+    @FormParam("final4")
+    public final String finalField4 = "finalValue4";
+
+
     /*
+    //----- Ok fields - Without Warnings:-----------//
     @PathParam("t")
     public String ttt = "ttt"; //  hello/t/query
 
