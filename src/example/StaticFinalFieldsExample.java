@@ -42,7 +42,7 @@ public class StaticFinalFieldsExample {
     public String ttt = "ttt"; //  hello/t/query
 
     @QueryParam("ttt")
-    public String ttt = "ttt"; //  hellow/t/query?ttt=2300*/
+    public String ttt = "ttt"; //  hello/t/query?ttt=2300*/
 
     @GET
     @Path("/query") // /hello/t/query
