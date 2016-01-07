@@ -7,13 +7,12 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
 //todo  an inspecton for enum values in @DefaultValue should be added
-@Path("StatusResourceWithDefaultValue")
-public class StatusResourceWithDefaultValue {
-
+@Path("StatusWithDefaultValue")
+public class StatusWithDefaultValue {
 
     @GET
-    @Path("/zoo1") //  StatusResource/zoo1?animal=BIG_BIRD
-    public Response zoo1(@QueryParam("animal") @DefaultValue("MEDIUM_DOG") Status status ){
+    @Path("/foo") //  StatusWithDefaultValue/foo?animal=BIG_BIRD
+    public Response foo(@QueryParam("animal") @DefaultValue("DOG") Status status ){
         return Response.status(200).entity(" " + status).build();
     }
 
