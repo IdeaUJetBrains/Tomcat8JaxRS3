@@ -9,7 +9,7 @@ import javax.ws.rs.QueryParam;
 @Path("SingletonEager")
 public class SingletonEager {
 
-    @QueryParam("m")
+
     private static final SingletonEager INSTANCE = new SingletonEager();
 
 
@@ -18,8 +18,8 @@ public class SingletonEager {
 
     private SingletonEager() {}
 
-    @Path("t") // SingletonEager/t
-    @GET
+    /*@Path("t") // SingletonEager/t
+    @GET*/
     public static SingletonEager getInstance() {
         return INSTANCE;
     }
@@ -28,9 +28,6 @@ public class SingletonEager {
 
     @Path("t1") // SingletonEager/t1
     @GET
-    public String getClichedMessage1(
+    public String foo() {return "foo";}
 
-    ) {
-        return "INSTANCE: "  + INSTANCE.toString() ;
-    }
 }

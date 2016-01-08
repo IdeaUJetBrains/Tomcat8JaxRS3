@@ -1,11 +1,10 @@
 package example.constructors;
 
-import example.staticClassesAndMethods.SuperClass;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
-import java.time.Instant;
+
 
 /**
  * ERROR

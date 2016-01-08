@@ -24,6 +24,7 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RSProjectComponent">
+    <option name="myShowResourcesView" value="false" />
     <option name="myShowAllResources" value="true" />
   </component>
 </project>

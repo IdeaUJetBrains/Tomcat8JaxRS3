@@ -5,7 +5,10 @@ package example;
 
 import example.Singleton.SingletonEager;
 import example.enumTest.StatusResource;
-import example.staticClassesAndMethods.One;
+import example.enumTest.StatusWithDefaultValue;
+import example.finalClassesAndMethods.Child1;
+import example.staticClassesAndMethods.StaticMethod;
+import example.staticClassesAndMethods.WithStaticClass;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -34,7 +37,7 @@ public class ConfigRest extends Application {
         h.add(SingletonStaticBlock.class);
         h.add(SingletonLazy.class);
         */
-        h.add(One.class);
+
         h.add(SingletonEager.class);
         h.add(StaticFinalFieldsExample.class);
         h.add(DefaultValueAnnotation.class);
@@ -45,7 +48,11 @@ public class ConfigRest extends Application {
         h.add(example.constructors.WithoutPublicConstructor.class);
         //h.add(example.constructorMore.NotAllParamsAnnotated.class);
         h.add(StatusResource.class);
+        h.add(StatusWithDefaultValue.class);
 
+        h.add(WithStaticClass.StaticTest.class);
+        h.add(StaticMethod.class);
+        h.add(Child1.class);
 
         return h;
     }
