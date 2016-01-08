@@ -4,6 +4,8 @@ package example;
 
 
 import example.Singleton.SingletonEager;
+import example.bugIDEA.Child2;
+import example.bugIDEA.Parent2;
 import example.enumTest.StatusResource;
 import example.enumTest.StatusWithDefaultValue;
 import example.finalClassesAndMethods.Child1;
@@ -53,7 +55,8 @@ public class ConfigRest extends Application {
         h.add(WithStaticClass.StaticTest.class);
         h.add(StaticMethod.class);
         h.add(Child1.class);
-
+        h.add(Child2.class);
+        h.add(Parent2.class);
         return h;
     }
 
