@@ -11,8 +11,8 @@ public class MyBean {
     private String header;
 
 
-    @Encoded
-    @DefaultValue("t")
+    //@Encoded
+    //@DefaultValue("t")
     @PathParam("id")
     public void setResourceId( String id) {System.out.println( "id=" + id );}
 
