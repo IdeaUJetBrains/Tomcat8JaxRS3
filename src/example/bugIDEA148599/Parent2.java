@@ -1,4 +1,4 @@
-package example.bugIDEA;
+package example.bugIDEA148599;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

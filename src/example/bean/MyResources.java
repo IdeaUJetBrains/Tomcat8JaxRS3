@@ -6,11 +6,18 @@ import javax.ws.rs.core.Context;
 @Path("myresources")
 public class MyResources {
     @Encoded @DefaultValue("test") @BeanParam MyBean myBean;
-    @Encoded @DefaultValue("test") @Context String context;
 
     @GET
     @Path("{id}")  //  myresources/23
-    public String get1() {
+    public String get1(@DefaultValue("q1_DefaultValue") @QueryParam("q1") String q1) {
+        System.out.println( "q1=" + q1 );
+        return "bla";
+    }
+
+    @GET
+    @Path("{id}/test")  //  myresources/2/test
+    public String get2() {
+        System.out.println( "id2" );
         return "bla";
 
     }

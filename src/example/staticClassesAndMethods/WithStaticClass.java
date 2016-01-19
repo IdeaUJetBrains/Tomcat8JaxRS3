@@ -2,6 +2,7 @@ package example.staticClassesAndMethods;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 
 /**
  * Created by Olga Pavlova on 1/7/2016.
@@ -17,7 +18,7 @@ public  class WithStaticClass {
 
         @GET
         @Path("/foo1")   //  StaticTest/foo1
-        public String foo1( String str ) { return "bla1"; }
+        public String foo1( @QueryParam("p") String str ) { return "bla1"; }
     }
 
     @GET
