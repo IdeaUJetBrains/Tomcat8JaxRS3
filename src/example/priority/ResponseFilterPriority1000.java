@@ -1,14 +1,13 @@
-package example.BindingAnnotation;
+package example.priority;
 
-import java.io.IOException;
 import javax.annotation.Priority;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
-import javax.ws.rs.container.PreMatching;
-import javax.ws.rs.core.Response;
-@PreMatching
-public class PoweredByResponseFilter implements ContainerResponseFilter {
+import java.io.IOException;
+
+@Priority(2000)
+public class ResponseFilterPriority1000 implements ContainerResponseFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext)

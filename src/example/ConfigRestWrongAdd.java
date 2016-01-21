@@ -1,8 +1,5 @@
 package example;
 
-
-
-
 import example.BindingAnnotation.GZIPWriterInterceptor;
 import example.BindingAnnotation.HelloWorldResource;
 
@@ -10,10 +7,6 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
-
-/**
- * Created by Olga Pavlova on 22/09/2015.
- */
 
 //@ApplicationPath("/")
 public class ConfigRestWrongAdd extends Application {

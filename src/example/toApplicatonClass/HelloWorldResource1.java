@@ -1,26 +1,24 @@
-package example.BindingAnnotation;
+package example.toApplicatonClass;
 
-import javax.annotation.Priority;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+//@Path("HelloWorldResource1")
+public class HelloWorldResource1 {
 
-@Path("HelloWorldResource")
-public class HelloWorldResource {
-
-    @GET
+    //@GET
     @Produces("text/plain")
+    //@Path("foo1")
     public String getHello() {
         return "Hello World!";
     }
-
+/*
     @GET
-    @Path("too-much-data")  //HelloWorldResource/too-much-data
+    @Path("too-much-data1")
     @Compress
     public String getVeryLongString() {
         String str = "Hello World!Hello World!Hello World!"; // very long string
         return str;
-    }
+    }*/
 }

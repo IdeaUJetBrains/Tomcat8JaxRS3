@@ -3,9 +3,7 @@ package example;
 
 
 
-import example.BindingAnnotation.Compress;
-import example.BindingAnnotation.GZIPWriterInterceptor;
-import example.BindingAnnotation.HelloWorldResource;
+import example.BindingAnnotation.*;
 import example.Encoded.EncodedMethodParam;
 import example.Singleton.ResourceSingleton;
 import example.Singleton.SingletonEager;
@@ -15,12 +13,18 @@ import example.bugIDEA148599.Parent2;
 import example.enumTest.StatusResource;
 import example.enumTest.StatusWithDefaultValue;
 import example.finalClassesAndMethods.Child1;
+import example.priority.*;
+import example.priority.dynamicFeature.HelloWorldResourcePriorityDinFeature;
+import example.priority.dynamicFeature.MyDynamicFeaturePriority1000;
+import example.priority.dynamicFeature.MyDynamicFeaturePriority2000;
 import example.specTest.mediaTypeCapabilities.WidgetsResource;
 import example.specTest.returnType.ReturnType;
 import example.staticClassesAndMethods.StaticMethod;
 import example.staticClassesAndMethods.WithStaticClass;
 
+import javax.annotation.Priority;
 import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.Priorities;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.ext.WriterInterceptor;
 import java.util.HashSet;
@@ -30,26 +34,53 @@ import java.util.Set;
  * Created by Olga Pavlova on 22/09/2015.
  */
 
-//@ApplicationPath("/")
+@ApplicationPath("/")
 public class ConfigRest extends Application {
-
-    @Override
-    public Set<Object> getSingletons() {
-        HashSet h = new HashSet<Object>();
-        h.add( HelloWorldResource.class );
-        h.add( GZIPWriterInterceptor.class);
-        return h;
-    }
 
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add( new HelloWorldResource() );
-        h.add( new GZIPWriterInterceptor() );
+        h.add( HelloWorldResource.class );
+        h.add( GZIPWriterInterceptor.class);
+        h.add( AuthorizationRequestFilter.class);
+
         return h;
     }
 
+    //NameBinding testing
+   /* @Override
+    public Set<Class<?>> getClasses() {
+        HashSet h = new HashSet<Class<?>>();
+        h.add( HelloWorldResource.class );
+        h.add( GZIPWriterInterceptor.class );
+        h.add( PoweredByResponseFilter.class );
 
+        return h;
+    }*/
+    //===================================================
+    //Priority filters interceptors testing
+    /*
+    @Override
+    public Set<Class<?>> getClasses() {
+        HashSet h = new HashSet<Class<?>>();
+        h.add( HelloWorldResourcePriority.class );
+        h.add( ResponseFilterPriority1000.class );
+        h.add( ResponseFilterPriority2000.class );
+        h.add( WriterInterceptorPriority1000.class );
+        h.add( WriterInterceptorPriority2000.class );
+
+        return h;
+    }*/
+
+    //Priority Dynamic feature testing
+   /* @Override
+    public Set<Class<?>> getClasses() {
+        HashSet h = new HashSet<Class<?>>();
+        h.add( HelloWorldResourcePriorityDinFeature.class );
+        h.add( MyDynamicFeaturePriority1000.class );
+        h.add( MyDynamicFeaturePriority2000.class );
+        return h;
+    }*/
 
     /*@Override
     public Set<Class<?>> getClasses() {

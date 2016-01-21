@@ -1,14 +1,15 @@
-package example.BindingAnnotation;
+package example.priority.dynamicFeature;
+
+import example.BindingAnnotation.Compress;
 
 import javax.annotation.Priority;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 
-@Path("HelloWorldResource")
-public class HelloWorldResource {
+@Path("HelloWorldResourcePriorityDinFeature")
+public class HelloWorldResourcePriorityDinFeature {
 
     @GET
     @Produces("text/plain")
@@ -17,7 +18,7 @@ public class HelloWorldResource {
     }
 
     @GET
-    @Path("too-much-data")  //HelloWorldResource/too-much-data
+    @Path("too-much-data")  //HelloWorldResourcePriorityDinFeature/too-much-data
     @Compress
     public String getVeryLongString() {
         String str = "Hello World!Hello World!Hello World!"; // very long string

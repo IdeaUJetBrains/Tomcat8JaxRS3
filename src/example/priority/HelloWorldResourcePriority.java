@@ -1,14 +1,15 @@
-package example.BindingAnnotation;
+package example.priority;
+
+import example.BindingAnnotation.Compress;
 
 import javax.annotation.Priority;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-
-@Path("HelloWorldResource")
-public class HelloWorldResource {
+@Priority(2000)
+@Path("HelloWorldResourcePriority")
+public class HelloWorldResourcePriority {
 
     @GET
     @Produces("text/plain")

@@ -1,13 +1,14 @@
-package example.BindingAnnotation;
+package example.preMatching;
 
-import java.io.IOException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.PreMatching;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
+import java.io.IOException;
+
 @PreMatching
-public class AuthorizationRequestFilter implements ContainerRequestFilter {
+public class AuthorizationRequestFilterPreMatch implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext)
@@ -23,6 +24,6 @@ public class AuthorizationRequestFilter implements ContainerRequestFilter {
                     .entity("User cannot access the resource.")
                     .build());
         }
-        System.out.print("AuthorizationRequestFilter with PreMatching works here.");
+        System.out.print("AuthorizationRequestFilterPreMatch  works here.");
     }
 }
