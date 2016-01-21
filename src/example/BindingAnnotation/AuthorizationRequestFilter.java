@@ -6,7 +6,7 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.PreMatching;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-@PreMatching
+//@PreMatching
 public class AuthorizationRequestFilter implements ContainerRequestFilter {
 
     @Override
