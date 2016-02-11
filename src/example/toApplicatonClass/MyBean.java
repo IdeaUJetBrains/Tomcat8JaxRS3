@@ -21,7 +21,7 @@ public class MyBean {
 
     @Override
     public String toString() {
-        return "MyBean{" +
+        return "MyBeanWithPathParams{" +
                 "anyString='" + anyString + '\'' +
                 ", anyNumber=" + anyNumber +
                 '}';

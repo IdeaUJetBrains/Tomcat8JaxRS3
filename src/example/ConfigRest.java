@@ -3,30 +3,19 @@ package example;
 
 
 
-import example.BindingAnnotation.*;
-import example.Encoded.EncodedMethodParam;
-import example.Singleton.ResourceSingleton;
-import example.Singleton.SingletonEager;
-import example.bean.MyResources;
-import example.bugIDEA148599.Child2;
-import example.bugIDEA148599.Parent2;
-import example.enumTest.StatusResource;
-import example.enumTest.StatusWithDefaultValue;
-import example.finalClassesAndMethods.Child1;
-import example.priority.*;
-import example.priority.dynamicFeature.HelloWorldResourcePriorityDinFeature;
-import example.priority.dynamicFeature.MyDynamicFeaturePriority1000;
-import example.priority.dynamicFeature.MyDynamicFeaturePriority2000;
-import example.specTest.mediaTypeCapabilities.WidgetsResource;
-import example.specTest.returnType.ReturnType;
-import example.staticClassesAndMethods.StaticMethod;
-import example.staticClassesAndMethods.WithStaticClass;
+import example.RESTClient.MsgRestExampleWithClient.MessageResource;
+import example.RESTClient.beanparam.MyResourcesBean;
+import example.beanparam.BeanParamResource;
+import example.beanvalidation.MyConstrainsResource1;
+import example.checkInspections.CheckInspectionsChild;
+import example.checkInspections.DefaultValueInspection;
+import example.checkInspections.InspectionWrongProduces;
+import example.fileupload.FileUploadResource;
+import example.servernegotiation.MyResourceClientNegotiation;
+import example.servernegotiation.MyResourceServerNegotiaton;
 
-import javax.annotation.Priority;
 import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.Priorities;
 import javax.ws.rs.core.Application;
-import javax.ws.rs.ext.WriterInterceptor;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,7 +26,7 @@ import java.util.Set;
 @ApplicationPath("/")
 public class ConfigRest extends Application {
 
-    @Override
+   /* @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
         h.add( HelloWorldResource.class );
@@ -45,7 +34,7 @@ public class ConfigRest extends Application {
         h.add( AuthorizationRequestFilter.class);
 
         return h;
-    }
+    }*/
 
     //NameBinding testing
    /* @Override
@@ -73,19 +62,28 @@ public class ConfigRest extends Application {
     }*/
 
     //Priority Dynamic feature testing
-   /* @Override
+    @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add( HelloWorldResourcePriorityDinFeature.class );
-        h.add( MyDynamicFeaturePriority1000.class );
-        h.add( MyDynamicFeaturePriority2000.class );
+        //h.add( HelloWorldResourcePriorityDinFeature.class );
+        //h.add( MyDynamicFeaturePriority1000.class );
+        //h.add( MyDynamicFeaturePriority2000.class );
+        h.add( BeanParamResource.class );
+        h.add( MyConstrainsResource1.class );
+        h.add( MyResourcesBean.class );
+        h.add( BeanParamResource.class );
+        h.add( MessageResource.class );
+        h.add( HelloWorld.class );
+        h.add( InspectionWrongProduces.class );
+
+
         return h;
-    }*/
+    }
 
     /*@Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        *//*h.add(HelloWorld.class);
+        *//*h.add(HelloWorld1.class);
 
         h.add(TestForm.class);
         h.add(SuperClass.class);

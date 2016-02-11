@@ -26,7 +26,7 @@ public class MyResources {
 
     /*@GET
     @Path("t/{id}")  //  myresources/t/23
-    public MyBean get() {
+    public MyBeanWithPathParams get() {
         //this.myBean.setResourceId("про");
         //this.myBean.setResourceId("7");
         return this.myBean; //( this.myBean.getHeader() );

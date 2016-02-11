@@ -27,6 +27,7 @@ public class MyDynamicFeaturePriority1000 implements DynamicFeature {
         if ("example.priority.dynamicFeature".equals(resourcePackage)
                 && resourceMethod.getAnnotation(GET.class) != null) {
             context.register(LoggingFilter.class);
+            context.register(LoggingFilter.class);
 
         }
         System.out.print("MyDynamicFeaturePriority1000 with LoggingFilter works!");

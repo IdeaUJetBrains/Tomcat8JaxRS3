@@ -1,91 +1,41 @@
 package example;
+import com.sun.net.httpserver.HttpServer;
+import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
+import org.glassfish.jersey.server.ResourceConfig;
+import java.io.IOException;
+import java.net.URI;
 
-
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Cookie;
+
 
 // The Java class will be hosted at the URI path "/helloworld"
-
-
-@Path("/helloworld/{t}")
+@Path("/HelloWorld")
 public class HelloWorld {
-
-
-
-    public HelloWorld(@Context String t1,
-                      @HeaderParam("user-agent") String t2,
-                      @CookieParam("sessionid") String t3,
-                      @MatrixParam("name") String t4,
-                      @QueryParam("t") @DefaultValue("3QueryParam") String t5,
-                      @PathParam("t") String t6
-            /*,
-                      @FormParam("name") @DefaultValue("name1") String name,
-                      @FormParam("age") @DefaultValue("age1") String age*/
-    ) {
-        System.out.println( t1);
-        System.out.println( t2);
-        System.out.println( t3);
-        System.out.println( t4);
-        System.out.println( t5);
-        System.out.println( t6);
-        /*System.out.println( name);
-        System.out.println( age);*/
-    }
-
-   /* @FormParam("name")
-    public String namefield;*/
-
-
     // The Java method will process HTTP GET requests
-    @POST
+    @GET
     // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("text/plain")
-    public String getClichedMessage(
-            @FormParam("name") String name,
-            @FormParam("age") String age
-    ) {
-        return "POST: Hello World, " // + name + ", " + age
-                ;
+    @Produces("application/json; qs=1.0text/plain")
+    @Path("ddd")
+    public String getClichedMessage() {
+
+        // Return some cliched textual content
+        return "Hello World";
     }
 
+    public static void main(String[] args) throws IOException {
+        HttpServer server =  JdkHttpServerFactory.
+                createHttpServer(  URI.create("http://localhost:9998/"), new ResourceConfig(HelloWorld.class));
 
-    @GET
-    @Produces("text/plain")
-    public String getClichedMessage1(
-            @QueryParam("name") String name,
-            @QueryParam("age") String age
-    ) {
-        return "GET: Hello World, "  + name + ", " + age   ;
+        System.out.println("Server running");
+        System.out.println("Visit: http://localhost:9998/helloworld");
+        System.out.println("Hit return to stop...");
+        System.in.read();
+        System.out.println("Stopping server");
+        server.stop(0);
+        System.out.println("Server stopped");
     }
-
-
-
-    @GET
-    @Path("test1") ///helloworld/t1/test1
-    public String form(){
-        return "<html>\n" +
-                "<body>\n" +
-                "\t<h1>JAX-RS @FormQuery Testing</h1>\n" +
-                "\n" +
-                "\t<form action=\"/helloworld/t\" method=\"post\">\n" +
-                "\t\t<p>\n" +
-                "\t\t\tName : <input type=\"NUM\" name=\"name\" />\n" +
-                "\t\t</p>\n" +
-                "\t\t<p>\n" +
-                "\t\t\tAge : <input type=\"text\" name=\"age\" />\n" +
-                "\t\t</p>\n" +
-                "\t\t<input type=\"submit\" value=\"Add User\" />\n" +
-                "\t</form>\n" +
-                "\n" +
-                "</body>\n" +
-                "</html>";
-    }
-
-    /*@Path("/delete/{id}")
-    @DELETE
-    public void delete(@PathParam("id") long id) {
-
-    }
-*/
 }

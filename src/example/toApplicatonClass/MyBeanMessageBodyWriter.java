@@ -48,7 +48,7 @@ public class MyBeanMessageBodyWriter implements MessageBodyWriter<MyBean> {
             jaxbContext.createMarshaller().marshal(myBean, entityStream);
         } catch (JAXBException jaxbException) {
             throw new ProcessingException(
-                    "Error serializing a MyBean to the output stream", jaxbException);
+                    "Error serializing a MyBeanWithPathParams to the output stream", jaxbException);
         }
         //System.out.print("MyBeanMessageBodyWriter works!");
     }

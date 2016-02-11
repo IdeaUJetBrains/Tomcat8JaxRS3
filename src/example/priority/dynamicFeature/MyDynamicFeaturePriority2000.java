@@ -11,7 +11,7 @@ import javax.ws.rs.core.FeatureContext;
 import javax.ws.rs.ext.Provider;
 import java.lang.reflect.Method;
 
-@Priority(2000)
+@Priority(1000)
 @Provider
 public class MyDynamicFeaturePriority2000 implements DynamicFeature {
  

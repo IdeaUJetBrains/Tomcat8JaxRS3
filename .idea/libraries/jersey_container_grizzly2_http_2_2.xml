@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jersey-container-grizzly2-http-2.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/grizzly-http-server-2.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jersey-container-grizzly2-http-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.inject-2.2.0-b14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/grizzly-framework-2.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

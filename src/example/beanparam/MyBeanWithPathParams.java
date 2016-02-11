@@ -2,9 +2,7 @@ package example.beanparam;
 
 import javax.ws.rs.PathParam;
 
-/**
- * Created by Olga Pavlova on 2/3/2016.
- */
+
 public class MyBeanWithPathParams {
         @PathParam("id1")
         private String id1;
